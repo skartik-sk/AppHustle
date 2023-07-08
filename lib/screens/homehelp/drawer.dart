@@ -1,84 +1,88 @@
 import 'package:flutter/material.dart';
+
 class appdrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-
         child: Column(
-          children: [
-            Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(20),
-                color: Color.fromARGB(255, 233, 211, 175),
-                child: Center(
-                    child: Column(
-                      children: [
-                        Center(
-                          child: Container(
-                            height: 100,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('images/logo.png'),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ))),
-            SizedBox(
-              height: 10,
-            ),
-            ListTile(
-              title: Text("Home"),
-              leading: Icon(Icons.new_releases),
-            ),
-            Divider(),
-            ListTile(
-              title: Text("Reviews"),
-              leading: Icon(Icons.message),
-              onTap: () {
-                // _launchURL();
-
-                // if (await canLaunch(url)) {
-                //   await launch(
-                //     url,
-                //     forceSafariVC: false,
-                //   );
-                // }
-              },
-              // launch('https://pub.dev/packages/url_launcher'),
-            ),
-            Divider(),
-            ListTile(
-              title: Text("Notification"),
-              leading: Icon(Icons.add_alert_rounded),
-              onTap: () => {},
-            ),
-            Divider(),
-            ListTile(
-              title: Text("My account"),
-              leading: Icon(Icons.person),
-              onTap: () => {},
-            ),
-            Divider(),
-            ListTile(
-              title: Text("My Cart"),
-              leading: Icon(Icons.card_travel),
-              onTap: () => {},
-            ),
-            Divider(),
-            ListTile(
-              title: Text("Contact Us"),
-              leading: Icon(Icons.phone),
-              onTap: () => {},
-            ),
-            Divider(),
-            ListTile(
-              title: Text("Close"),
-              leading: Icon(Icons.close),
-              onTap: () => Navigator.of(context).pop(),
-            ),
-          ],
-        ));
+      children: [
+        Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(20),
+            color: Color(0x6baedee2),
+            child: Center(
+                child: Column(
+              children: [
+                Center(
+                  child: Container(
+                    height: 100,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/logo.png'),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ))),
+        SizedBox(
+          height: 10,
+        ),
+        ListTile(
+          title: Text(
+            "My Reviews",
+          ),
+          leading: Icon(
+            Icons.message_outlined,
+            color: Color(0xff137C86),
+          ),
+        ),
+        Divider(),
+        ListTile(
+          title: Text("History"),
+          leading: Icon(
+            Icons.history_toggle_off_rounded,
+            color: Color(0xff137C86),
+          ),
+          onTap: () {},
+        ),
+        Divider(),
+        ListTile(
+          title: Text("Notification"),
+          leading: Icon(
+            Icons.notification_important,
+            color: Color(0xff137C86),
+          ),
+          onTap: () => {},
+        ),
+        Divider(),
+        ListTile(
+          title: Text("Help"),
+          leading: Icon(
+            Icons.help_outline_outlined,
+            color: Color(0xff137C86),
+          ),
+          onTap: () => {},
+        ),
+        Divider(),
+        ListTile(
+          title: Text("about us"),
+          leading: Icon(
+            Icons.info_outline,
+            color: Color(0xff137C86),
+          ),
+          onTap: () => {},
+        ),
+        Divider(),
+        ListTile(
+          title: Text("Logout"),
+          leading: Icon(
+            Icons.exit_to_app_sharp,
+            color: Color(0xff137C86),
+          ),
+          onTap: () => {},
+        ),
+      ],
+    ));
   }
 }

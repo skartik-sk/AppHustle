@@ -1,6 +1,12 @@
+import 'package:apphustle/screens/model/playlist_model.dart';
+import 'package:apphustle/screens/songscr/home_screen.dart';
+import 'package:apphustle/screens/songscr/playlist_screen.dart';
+import 'package:apphustle/screens/songscr/song_screen.dart';
 import 'package:apphustle/screens/splash.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:provider/provider.dart';
+import 'helper/get_di.dart' as di;
 void main() {
   runApp(MyApp());
 }
@@ -8,10 +14,20 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "kartik task ",
-      home: splash(),
+    return ChangeNotifierProvider(
+      create: (context) => Playlist(),
+      child: GetMaterialApp(
+          onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case '/playlist':
+            return MaterialPageRoute(builder: (context)=> PlaylistScreen());
+            break;
+
+        }},
+        debugShowCheckedModeBanner: false,
+        title: "kartik task ",
+        home: splash(),
+      ),
     );
   }
 }
