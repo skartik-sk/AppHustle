@@ -9,6 +9,8 @@ class playlist extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Playlist> playlists = Playlist.playlists;
     return Scaffold(
+      backgroundColor: Color(0xffE5F2F3),
+      extendBody: true,
       body: PlaylistMusic1(playlists: playlists,),
       bottomNavigationBar: bottomnav("play"),
     );

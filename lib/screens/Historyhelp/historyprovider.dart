@@ -2,15 +2,15 @@ import 'package:apphustle/screens/search%20help/searchmodel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-class Favprovider extends ChangeNotifier{
-  List<searchmodel> _words = [];
-  List<searchmodel> get words => _words;
+class homeprofider extends ChangeNotifier{
+  List<searchmodel> _history = [];
+  List<searchmodel> get history => _history;
 
   void toggleFavorite(searchmodel n) {
     if (isExist(n)) {
-      _words.remove(n);
+      _history.remove(n);
     } else {
-      _words.add(n);
+      _history.add(n);
     }
     notifyListeners();
   }
@@ -18,24 +18,24 @@ class Favprovider extends ChangeNotifier{
 //     if()
 // }
   void remorew(searchmodel n){
-    _words.remove(n);
+    _history.remove(n);
     notifyListeners();
   }
   bool isExist(searchmodel n) {
-    final isExist = _words.contains(n);
+    final isExist = _history.contains(n);
     return isExist;
   }
 
-  void clearFavorite() {
-    _words = [];
+  void clearhistroy() {
+    _history = [];
     notifyListeners();
   }
 
-  static Favprovider of(
+  static homeprofider of(
       BuildContext context, {
         bool listen = true,
       }) {
-    return Provider.of<Favprovider>(
+    return Provider.of<homeprofider>(
       context,
       listen: listen,
     );

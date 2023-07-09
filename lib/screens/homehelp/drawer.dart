@@ -1,4 +1,7 @@
+import 'package:apphustle/screens/Historyhelp/history.dart';
+import 'package:apphustle/screens/Historyhelp/historytost.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class appdrawer extends StatelessWidget {
   @override
@@ -44,7 +47,14 @@ class appdrawer extends StatelessWidget {
             Icons.history_toggle_off_rounded,
             color: Color(0xff137C86),
           ),
-          onTap: () {},
+          onTap: () {
+            historytost();
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                builder: (context) => history(),
+            ),);
+          },
         ),
         Divider(),
         ListTile(

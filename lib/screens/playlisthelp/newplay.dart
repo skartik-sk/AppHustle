@@ -59,6 +59,9 @@ class _newPlayState extends State<newPlay> {
               ),
               onPressed: () {
                 Provider.of<Playlist>(context,listen: false).addtask(tasktext.text);
+                setState(() {
+
+                });
                 Navigator.pop(context);
               },
               child: Text(

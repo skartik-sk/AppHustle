@@ -60,8 +60,12 @@ class profilebody extends StatelessWidget {
                   Divider(thickness: 1,color: Colors.black38,),   Text("About" , style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w400, color: Colors.grey),),
                   Divider(thickness: 1,color: Colors.black38,),Text("Delete Account" , style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w400 , color: Colors.redAccent),),
                   Divider(thickness: 1,color: Colors.black38,),
+
+
+
                 ],
-              )
+              ),
+              // SizedBox(height: 100),
             ],
           ),
         ),

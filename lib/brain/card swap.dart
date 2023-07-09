@@ -2,20 +2,29 @@ import 'dart:ffi';
 
 import 'package:apphustle/screens/favhelp/favprovider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class swapcard extends StatelessWidget {
+class swapcard extends StatefulWidget {
   const swapcard({
     Key? key,
     required this.name,
     required this.image,
     required this.subdetail,
-  }) : super(key: key);
+required this.n,
 
+  }) : super(key: key);
   final String name, image, subdetail;
+  final int n;
+
+  @override
+  State<swapcard> createState() => _swapcardState();
+}
+
+class _swapcardState extends State<swapcard> {
   // final GestureTapCallback press;
   @override
   Widget build(BuildContext context) {
-    // final provider = Favprovider.of(context);
+    final provider = Provider.of<Favprovider>(context);
     return Padding(
       padding: EdgeInsets.only(left: 20),
       child: GestureDetector(
@@ -28,7 +37,7 @@ class swapcard extends StatelessWidget {
             child: Stack(
               children: [
                 Image.network(
-                  image,
+                  widget.image,
                   fit: BoxFit.cover,
                 ),
                 Container(
@@ -57,13 +66,13 @@ class swapcard extends StatelessWidget {
                               TextStyle(color: Color.fromARGB(255, 41, 5, 5)),
                           children: [
                             TextSpan(
-                              text: "$name\n",
+                              text: "${widget.name}\n",
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            TextSpan(text: "$subdetail ")
+                            TextSpan(text: "${widget.subdetail} ")
                           ],
                         ),
                       ),
@@ -71,12 +80,19 @@ class swapcard extends StatelessWidget {
                   ],
                 ),
                 IconButton(
-                    onPressed: () {
+                    onPressed:(){
 
-                      print("pressed");
-                    },
+
+                    }
+                      // print("pressed ${widget.n} ");
+                      // provider.toggleFavorite(widget.n);
+// setState(() {
+//
+// });
+                   ,
                   icon:
-                      Icon(Icons.favorite, color: Colors.white)
+                  Icon(Icons.playlist_add, color: Colors.white)
+                 // provider.isExist(widget.n)? Icon(Icons.favorite, color: Colors.red):Icon(Icons.favorite, color: Colors.white)
                 ),
               ],
             ),

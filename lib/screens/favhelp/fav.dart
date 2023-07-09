@@ -9,6 +9,8 @@ class fav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffE5F2F3),
+      extendBody: true,
       body: favbody(),
       drawer: appdrawer(),
       bottomNavigationBar: bottomnav("fav"),

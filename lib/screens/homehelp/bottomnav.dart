@@ -4,6 +4,7 @@ import 'package:apphustle/screens/favhelp/favbody.dart';
 import 'package:apphustle/screens/favhelp/favtost.dart';
 
 import 'package:apphustle/screens/homehelp/home.dart';
+import 'package:apphustle/screens/homehelp/hometost.dart';
 import 'package:apphustle/screens/playlisthelp/playlist.dart';
 import 'package:apphustle/screens/playlisthelp/playtost.dart';
 
@@ -29,7 +30,7 @@ class bottomnav extends StatelessWidget {
         height: 70,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20)),
-          color: Color(0x20000000),
+          color: Color(0xD3FFFFFF),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,7 +42,6 @@ class bottomnav extends StatelessWidget {
                 color: which == "search" ? Color(0xff137C86) : Color(0x5f1f1e1e),
               ),
               onPressed: () {
-                showtost3();
                 Navigator.pushReplacement(
                     context, MaterialPageRoute(builder: (context) => search()));
               },
@@ -65,6 +65,7 @@ class bottomnav extends StatelessWidget {
                 color: which == "home" ? Color(0xff137C86) : Color(0x5f1f1e1e),
               ),
               onPressed: () {
+                hometost();
                 Navigator.pushReplacement(
                     context, MaterialPageRoute(builder: (context) => home()));
               },

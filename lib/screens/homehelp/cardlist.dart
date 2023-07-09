@@ -6,6 +6,7 @@ class homelistcard {
     '    Rumours [1977]',
     '    evermore [2020]',
   ];
+
   static List<String> subname = [
     '    Taylor Swift',
     '    Taylor Swift',
