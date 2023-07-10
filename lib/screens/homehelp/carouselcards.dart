@@ -4,9 +4,10 @@ import 'package:apphustle/screens/songscr/song_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 class carouselcards extends StatelessWidget {
-  const carouselcards({
-    super.key,
-  });
+carouselcards({ required this.img, required this.url,required this.text});
+final String img;
+final String url;
+final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,10 @@ class carouselcards extends StatelessWidget {
         borderRadius: BorderRadius.circular(8.0),
         image: DecorationImage(
           image: NetworkImage(
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ38JNA2OOCqlD4bdiZrYbHNNjzuVWyHL3lAnR3yM7Ys9GF-Z0qkK8mkbjqgJR6fOotzDM&usqp=CAU"),
+              // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ38JNA2OOCqlD4bdiZrYbHNNjzuVWyHL3lAnR3yM7Ys9GF-Z0qkK8mkbjqgJR6fOotzDM&usqp=CAU"
+          img
+
+          ),
           fit: BoxFit.cover,
         ),
       ),
@@ -41,7 +45,7 @@ class carouselcards extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "Sample song",
+                      'Play Song ->',
                       style: GoogleFonts.poppins(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
@@ -50,8 +54,7 @@ class carouselcards extends StatelessWidget {
                     IconButton(
                         onPressed: () {
                           Navigator.pushReplacement(
-                              context, MaterialPageRoute(builder: (context) => SongScreen()));
-
+                              context, MaterialPageRoute(builder: (context) => SongScreen(songsource: url,title: text)));
                           print("pressed");
                         },
                         icon: Icon(

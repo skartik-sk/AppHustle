@@ -1,7 +1,10 @@
+import 'package:apphustle/screens/Widgets/playlist_card.dart';
+import 'package:apphustle/screens/Widgets/section_header.dart';
+import 'package:apphustle/screens/Widgets/song_card.dart';
 import 'package:apphustle/screens/model/playlist_model.dart';
 import 'package:apphustle/screens/model/song_model.dart';
 import 'package:flutter/material.dart';
-import '../widgets/widgets.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

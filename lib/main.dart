@@ -8,7 +8,7 @@ import 'package:apphustle/screens/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
-import 'helper/get_di.dart' as di;
+
 
 void main() {
   runApp(MyApp());

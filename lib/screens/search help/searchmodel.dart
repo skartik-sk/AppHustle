@@ -3,6 +3,7 @@ class searchmodel{
   String? title;
   int? year;
   String? suddetail;
-searchmodel(this.title, this.year, this.suddetail);
+  String? url;
+searchmodel(this.title, this.year, this.suddetail, this.url);
 
 }

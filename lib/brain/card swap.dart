@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:apphustle/screens/favhelp/favprovider.dart';
+import 'package:apphustle/screens/songscr/song_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,11 +11,12 @@ class swapcard extends StatefulWidget {
     required this.name,
     required this.image,
     required this.subdetail,
-required this.n,
+    required this.url
+
 
   }) : super(key: key);
-  final String name, image, subdetail;
-  final int n;
+  final String name, image, subdetail, url;
+
 
   @override
   State<swapcard> createState() => _swapcardState();
@@ -28,7 +30,10 @@ class _swapcardState extends State<swapcard> {
     return Padding(
       padding: EdgeInsets.only(left: 20),
       child: GestureDetector(
-        onTap: null,
+        onTap: (){
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => SongScreen(songsource:widget. url,title: widget.name)));
+        },
         child: SizedBox(
           width: 150,
           height: 200,
@@ -72,7 +77,9 @@ class _swapcardState extends State<swapcard> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            TextSpan(text: "${widget.subdetail} ")
+                            TextSpan(text: "${widget.subdetail} ",style: TextStyle(
+                              fontSize: 10,
+                            ),)
                           ],
                         ),
                       ),

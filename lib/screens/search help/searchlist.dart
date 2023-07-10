@@ -1,5 +1,4 @@
 import 'package:apphustle/brain/MusicDataResponse.dart';
-import 'package:apphustle/brain/apicall.dart';
 import 'package:apphustle/screens/homehelp/bottomnav.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +12,11 @@ class searchlist extends StatefulWidget {
 class _searchlist extends State<searchlist> {
   List<MusicDataResponse> musicList = [];
 
-  @override
-  void initState() {
-    super.initState();
-    fetchMusicData();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   fetchMusicData();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +30,12 @@ class _searchlist extends State<searchlist> {
 
   }
 
-  Future<void> fetchMusicData() async {
-    final musiclist = await ApiService().getAllFetchMusicData();
-    setState(() {
-      musicList = musiclist;
-    });
-  }
+  // Future<void> fetchMusicData() async {
+  //   final musiclist = await ApiService().getAllFetchMusicData();
+  //   setState(() {
+  //     musicList = musiclist;
+  //   });
+  // }
 
   Widget customListCard() {
     return ListView.builder(

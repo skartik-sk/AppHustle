@@ -26,7 +26,7 @@ class _splashState extends State<splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xffE5F2F3),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -41,7 +41,7 @@ class _splashState extends State<splash> {
                   ),
                   duration: 800,
                   splashTransition: SplashTransition.fadeTransition,
-                  backgroundColor: Colors.white,
+                  backgroundColor: Color(0xffE5F2F3),
                   nextScreen: loginscreen()),
             ),
           ],

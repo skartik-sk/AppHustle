@@ -8,16 +8,15 @@ import 'package:just_audio/just_audio.dart';
 import 'package:rxdart/rxdart.dart' as rxdart;
 
 class SongScreen extends StatefulWidget {
-  const SongScreen({Key? key}) : super(key: key);
-
+  SongScreen({required this.songsource, required this.title});
+  final String songsource;
+  final String title;
   @override
   State<SongScreen> createState() => _SongScreenState();
 }
-
 class _SongScreenState extends State<SongScreen> {
   AudioPlayer audioPlayer = AudioPlayer();
   Song song = Get.arguments ?? Song.songs[0];
-
   @override
   void initState() {
     super.initState();
@@ -27,7 +26,7 @@ class _SongScreenState extends State<SongScreen> {
         children: [
           AudioSource.uri(
             Uri.parse(
-                'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/11/file_example_MP3_1MG.mp3'),
+                widget.songsource),
           ),
         ],
       ),
@@ -70,7 +69,7 @@ class _SongScreenState extends State<SongScreen> {
           ),
           const _BackgroundFilter(),
           _MusicPlayer(
-            song: song,
+            song:  widget.title,
             seekBarDataStream: _seekBarDataStream,
             audioPlayer: audioPlayer,
           ),
@@ -89,7 +88,7 @@ class _MusicPlayer extends StatelessWidget {
   })  : _seekBarDataStream = seekBarDataStream,
         super(key: key);
 
-  final Song song;
+  final String song;
   final Stream<SeekBarData> _seekBarDataStream;
   final AudioPlayer audioPlayer;
 
@@ -105,21 +104,14 @@ class _MusicPlayer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            song.title,
+           song,
             style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
           ),
           const SizedBox(height: 10),
-          Text(
-            song.description,
-            maxLines: 2,
-            style: Theme.of(context)
-                .textTheme
-                .bodySmall!
-                .copyWith(color: Colors.white),
-          ),
+
           const SizedBox(height: 30),
           StreamBuilder<SeekBarData>(
             stream: _seekBarDataStream,

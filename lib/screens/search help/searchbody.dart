@@ -4,6 +4,7 @@ import 'package:apphustle/screens/Historyhelp/historyprovider.dart';
 import 'package:apphustle/screens/favhelp/favprovider.dart';
 import 'package:apphustle/screens/search%20help/searchcontroler.dart';
 import 'package:apphustle/screens/search%20help/searchmodel.dart';
+import 'package:apphustle/screens/songscr/song_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -19,64 +20,27 @@ class searchbody extends StatefulWidget {
   searchmodel(
     "    Midnights",
     2022,
-    '    Taylor Swift',
+    '    Taylor Swift','https://socialdance.stanford.edu/music/Die_Haimbacher_Waltz.m4a',
   ),
   searchmodel(
     '    folklore ',
     2020,
-    '    Taylor Swift',
+    '    Taylor Swift','https://socialdance.stanford.edu/music/Rustic_Reel.m4a',
   ),
   searchmodel(
     "     Un Verano Sin Ti",
     2022,
-    '    Bad Bunny',
+    '    Bad Bunny', 'https://socialdance.stanford.edu/music/Triplet_Polka_Quadrille.m4a',
   ),
   searchmodel(
     "    Rumours",
     1977,
-    '    Fleetwood Mac',
-  ),searchmodel(
-    "    Rumours",
-    1977,
-    '    Fleetwood Mac',
-  ),searchmodel(
-    "    Rumours",
-    1977,
-    '    Fleetwood Mac',
-  ),searchmodel(
-    "    Rumours",
-    1977,
-    '    Fleetwood Mac',
-  ),searchmodel(
-    "    Rumours",
-    1977,
-    '    Fleetwood Mac',
-  ),searchmodel(
-    "    Rumours",
-    1977,
-    '    Fleetwood Mac',
-  ),searchmodel(
-    "    Rumours",
-    1977,
-    '    Fleetwood Mac',
-  ),searchmodel(
-    "    Rumours",
-    1977,
-    '    Fleetwood Mac',
-  ),searchmodel(
-    "    Rumours",
-    1977,
-    '    Fleetwood Mac',
-  ),searchmodel(
-    "    Rumours",
-    1977,
-    '    Fleetwood Mac',
+    '    Fleetwood Mac','https://socialdance.stanford.edu/music/Partners_For_Life_Waltz_Q_Fig_3.mp3',
   ),
-  searchmodel(
-    "evermore",
-    2020,
-    '    Taylor Swift',
-  ),
+       searchmodel( 'Cellarius_Mazurka_Quadrille',1975 , 'by Cellarius_Mazurka_Quadrille' , 'https://socialdance.stanford.edu/music/Cellarius_Mazurka_Quadrille_Fig5.m4a' ), searchmodel( 'Sociable_Cotillion', 2015,  'by Sociable_Cotillion', 'https://socialdance.stanford.edu/music/Sociable_Cotillion.mp3' ), searchmodel( 'Triplet_Polka', 2023, 'by Triplet_Polka' ,'https://socialdance.stanford.edu/music/Triplet_Polka_Quadrille.mp3'  ), searchmodel( 'Romany_Polka_slower', 2016, 'by Romany_Polka_slower' , 'https://socialdance.stanford.edu/music/Romany_Polka_slower.m4a' ), searchmodel( 'Prince_Imperial_Q',2001 ,'by Prince_Imperial_Q'  ,'http://socialdance.stanford.edu/music/Prince_Imperial_Q_Fig.4.m4a'  ),
+
+
+
 ];
 List<searchmodel> displyList = List.from(searchlist);
 class _searchbodyState extends State<searchbody> {
@@ -119,6 +83,9 @@ class _searchbodyState extends State<searchbody> {
                       onTap: (){
                         print("done");
                         hisprovier.toggleFavorite(searchlist[index]);
+                        Navigator.pushReplacement(
+                            context, MaterialPageRoute(builder: (context) => SongScreen(songsource:displyList[index].url.toString(),title: displyList[index].title.toString())));
+
                       },
                       title: Text(displyList[index].title.toString() + " "+ displyList[index].year.toString()),
                       subtitle: Text(displyList[index].suddetail.toString()),
@@ -126,6 +93,8 @@ class _searchbodyState extends State<searchbody> {
                           onPressed: () {
                             print("pressed ${index} ");
                             provider.toggleFavorite(searchlist[index]);
+
+
                           },
                           icon:
                           provider.isExist(searchlist[index])? Icon(Icons.favorite, color: Colors.red):Icon(Icons.favorite, color: Colors.black12
