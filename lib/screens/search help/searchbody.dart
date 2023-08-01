@@ -18,24 +18,24 @@ class searchbody extends StatefulWidget {
 
  List<searchmodel> searchlist = [
   searchmodel(
-    "    Midnights",
+    "Midnights",
     2022,
-    '    Taylor Swift','https://socialdance.stanford.edu/music/Die_Haimbacher_Waltz.m4a',
+    'Taylor Swift','https://socialdance.stanford.edu/music/Die_Haimbacher_Waltz.m4a',
   ),
   searchmodel(
-    '    folklore ',
+    'folklore ',
     2020,
-    '    Taylor Swift','https://socialdance.stanford.edu/music/Rustic_Reel.m4a',
+    'Taylor Swift','https://socialdance.stanford.edu/music/Rustic_Reel.m4a',
   ),
   searchmodel(
-    "     Un Verano Sin Ti",
+    "Un Verano Sin Ti",
     2022,
-    '    Bad Bunny', 'https://socialdance.stanford.edu/music/Triplet_Polka_Quadrille.m4a',
+    'Bad Bunny', 'https://socialdance.stanford.edu/music/Triplet_Polka_Quadrille.m4a',
   ),
   searchmodel(
-    "    Rumours",
+    "Rumours",
     1977,
-    '    Fleetwood Mac','https://socialdance.stanford.edu/music/Partners_For_Life_Waltz_Q_Fig_3.mp3',
+    'Fleetwood Mac','https://socialdance.stanford.edu/music/Partners_For_Life_Waltz_Q_Fig_3.mp3',
   ),
        searchmodel( 'Cellarius_Mazurka_Quadrille',1975 , 'by Cellarius_Mazurka_Quadrille' , 'https://socialdance.stanford.edu/music/Cellarius_Mazurka_Quadrille_Fig5.m4a' ), searchmodel( 'Sociable_Cotillion', 2015,  'by Sociable_Cotillion', 'https://socialdance.stanford.edu/music/Sociable_Cotillion.mp3' ), searchmodel( 'Triplet_Polka', 2023, 'by Triplet_Polka' ,'https://socialdance.stanford.edu/music/Triplet_Polka_Quadrille.mp3'  ), searchmodel( 'Romany_Polka_slower', 2016, 'by Romany_Polka_slower' , 'https://socialdance.stanford.edu/music/Romany_Polka_slower.m4a' ), searchmodel( 'Prince_Imperial_Q',2001 ,'by Prince_Imperial_Q'  ,'http://socialdance.stanford.edu/music/Prince_Imperial_Q_Fig.4.m4a'  ),
 
@@ -57,13 +57,10 @@ class _searchbodyState extends State<searchbody> {
     return Scaffold(
       backgroundColor: Color(0xffE5F2F3),
       body: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(15),
         child: Column(
 
           children: [
-            const SizedBox(
-              height: 20,
-            ),
             TextField(
               onChanged: (value) => updatelist(value),
               decoration: const InputDecoration(
@@ -83,7 +80,7 @@ class _searchbodyState extends State<searchbody> {
                       onTap: (){
                         print("done");
                         hisprovier.toggleFavorite(searchlist[index]);
-                        Navigator.pushReplacement(
+                        Navigator.push(
                             context, MaterialPageRoute(builder: (context) => SongScreen(songsource:displyList[index].url.toString(),title: displyList[index].title.toString())));
 
                       },
@@ -102,7 +99,7 @@ class _searchbodyState extends State<searchbody> {
                       ),
 
                     ))),
-            SizedBox(height: 100),
+   
           ],
         ),
       ),

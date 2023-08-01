@@ -4,12 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 PreferredSize buildAppBar() {
   return PreferredSize(
-    preferredSize: Size.fromHeight(100.0),
+    preferredSize: Size.fromHeight(80.0),
     child: Column(
-
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-
         AppBar(
           centerTitle: true,
           bottomOpacity: 0.5,
@@ -17,13 +15,12 @@ PreferredSize buildAppBar() {
           elevation: 0,
           leading: Builder(
             builder: (BuildContext context) {
-
               return Padding(
-                padding: const EdgeInsets.only( left: 8.0 , top: 10),
+                padding: const EdgeInsets.only( left: 8.0 , top: 1),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(8)),
-                    color: Color(0x3F000000),
+                    color: Color.fromARGB(29, 0, 0, 0),
                   ),
                   child: IconButton(
                     icon: Icon(

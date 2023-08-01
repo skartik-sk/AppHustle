@@ -13,19 +13,7 @@ class profilebody extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(onPressed:(){
-                    Scaffold
-                 .of(context).openDrawer(); }, icon: Icon(Icons.menu, size:  30, color: Color(0xff137C86),)),
-                  Text("My profile", style: GoogleFonts.poppins(fontSize: 25,fontWeight: FontWeight.bold, color: Color(0xff137C86)),),
-                  IconButton(onPressed: null, icon: Icon(Icons.edit_note, size: 30,))
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
+            
               CircleAvatar(
                 radius:
                 40,

@@ -25,46 +25,6 @@ class _PlaylistMusic1State extends State<PlaylistMusic1> {
             child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                          onPressed: () {
-                            Scaffold.of(context).openDrawer();
-                          },
-                          icon: Icon(
-                            Icons.menu,
-                            size: 30,
-                            color: Color(0xff137C86),
-                          )),
-                      Text(
-                        "Playlist",
-                        style: GoogleFonts.poppins(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xff137C86)),
-                      ),
-                      IconButton(
-                          onPressed: () {
-                            showModalBottomSheet(
-                                context: context,
-                                builder: (context) =>
-                                    newPlay(Addtask: (newName) {
-                                      // setState(() {
-                                      //   tasks.add(task(name: newName));
-                                      // });
-                                      Navigator.pop(context);
-                                    }));
-                          },
-                          icon: Icon(
-                            Icons.edit_note,
-                            size: 30,
-                          ))
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
                   Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
@@ -82,9 +42,6 @@ class _PlaylistMusic1State extends State<PlaylistMusic1> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 100),
-                ]))
-
-        ));
+                ]))));
   }
 }

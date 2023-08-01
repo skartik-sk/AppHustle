@@ -35,38 +35,15 @@ class bottomnav extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            IconButton(
-              icon: Icon(
-                Icons.search,
-                size: 30,
-                color: which == "search" ? Color(0xff137C86) : Color(0x5f1f1e1e),
-              ),
-              onPressed: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => search()));
-              },
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.queue_music_rounded,
-                size: 30,
-                color: which == "play" ? Color(0xff137C86) : Color(0x5f1f1e1e),
-              ),
-              onPressed: () {
-                showtost1();
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => playlist()));
-              },
-            ),
-            IconButton(
+IconButton(
               icon: Icon(
                 Icons.home_rounded,
                 size: 30,
-                color: which == "home" ? Color(0xff137C86) : Color(0x5f1f1e1e),
+                color: which == "home" || which=="search" ? Color(0xff137C86) : Color(0x5f1f1e1e),
               ),
               onPressed: () {
                 hometost();
-                Navigator.pushReplacement(
+                Navigator.push(
                     context, MaterialPageRoute(builder: (context) => home()));
               },
             ),
@@ -79,8 +56,21 @@ class bottomnav extends StatelessWidget {
                 ),
                 onPressed:() {
                   showtost();
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context, MaterialPageRoute(builder: (context) => fav()));},),
+            IconButton(
+              icon: Icon(
+                Icons.queue_music_rounded,
+                size: 30,
+                color: which == "play" ? Color(0xff137C86) : Color(0x5f1f1e1e),
+              ),
+              onPressed: () {
+                showtost1();
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => playlist()));
+              },
+            ),
+            
             IconButton(
               icon: Icon(
                 Icons.account_circle_outlined,
@@ -88,7 +78,7 @@ class bottomnav extends StatelessWidget {
                 color: which == "profile" ? Color(0xff137C86) : Color(0x5f1f1e1e),
               ),
               onPressed: () {
-                Navigator.pushReplacement(context,
+                Navigator.push(context,
                     MaterialPageRoute(builder: (context) => profile()));
               },
             ),

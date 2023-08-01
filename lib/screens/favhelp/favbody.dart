@@ -24,35 +24,7 @@ class _favbodyState extends State<favbody> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                    onPressed: () {
-                      Scaffold.of(context).openDrawer();
-                    },
-                    icon: Icon(
-                      Icons.menu,
-                      size: 30,
-                      color: Color(0xff137C86),
-                    )),
-                Text(
-                  "My Favorate",
-                  style: GoogleFonts.poppins(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff137C86)),
-                ),
-                IconButton(
-                    onPressed: (){
-                      provider.clearFavorite();
-                    },
-                    icon: Icon(
-                      Icons.delete,
-                      size: 30,
-                    ))
-              ],
-            ),
+           
             Expanded(
                 child: ListView.builder(
                     itemCount: provider.words.length,
@@ -60,15 +32,14 @@ class _favbodyState extends State<favbody> {
                           title: Text(provider.words[index].title.toString() +
                               " " +
                               provider.words[index].year.toString()),
-                          subtitle: Text(
-                              provider.words[index].suddetail.toString()),
+                          subtitle:
+                              Text(provider.words[index].suddetail.toString()),
                           trailing: IconButton(
                               onPressed: () {
                                 print("pressed ${index} ");
                                 provider.remorew(provider.words[index]);
                               },
-                             icon:Icon(Icons.favorite, color: Colors.red)
-                                 ),
+                              icon: Icon(Icons.favorite, color: Colors.red)),
                         ))),
             SizedBox(height: 100),
             // Expanded(
@@ -93,6 +64,8 @@ class _favbodyState extends State<favbody> {
     );
   }
 }
+
+
 // Column(
 // children: [
 // Expanded(

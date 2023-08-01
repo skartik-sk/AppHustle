@@ -31,7 +31,7 @@ class _swapcardState extends State<swapcard> {
       padding: EdgeInsets.only(left: 20),
       child: GestureDetector(
         onTap: (){
-          Navigator.pushReplacement(
+          Navigator.push(
               context, MaterialPageRoute(builder: (context) => SongScreen(songsource:widget. url,title: widget.name)));
         },
         child: SizedBox(
@@ -88,8 +88,6 @@ class _swapcardState extends State<swapcard> {
                 ),
                 IconButton(
                     onPressed:(){
-
-
                     }
                       // print("pressed ${widget.n} ");
                       // provider.toggleFavorite(widget.n);

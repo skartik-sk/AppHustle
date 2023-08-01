@@ -14,23 +14,7 @@ class histroybody extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(onPressed:(){
-                  Scaffold
-                      .of(context).openDrawer(); }, icon: Icon(Icons.menu, size:  30, color: Color(0xff137C86),)),
-                Text("My History", style: GoogleFonts.poppins(fontSize: 25,fontWeight: FontWeight.bold, color: Color(0xff137C86)),),
-                IconButton(onPressed: (){
-                  hisprovier.clearhistroy();
-                }, icon: Icon(Icons.delete, size: 30,))
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Expanded(
+          children: [    Expanded(
                 child: ListView.builder(
                     itemCount: hisprovier.history.length,
                     itemBuilder: (context, index) => ListTile(

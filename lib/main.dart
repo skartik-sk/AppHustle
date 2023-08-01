@@ -3,7 +3,6 @@ import 'package:apphustle/screens/favhelp/favprovider.dart';
 import 'package:apphustle/screens/model/playlist_model.dart';
 import 'package:apphustle/screens/songscr/home_screen.dart';
 import 'package:apphustle/screens/songscr/playlist_screen.dart';
-import 'package:apphustle/screens/songscr/song_screen.dart';
 import 'package:apphustle/screens/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';

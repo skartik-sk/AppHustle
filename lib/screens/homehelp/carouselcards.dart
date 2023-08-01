@@ -53,7 +53,7 @@ final String text;
                     ),
                     IconButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
+                          Navigator.push(
                               context, MaterialPageRoute(builder: (context) => SongScreen(songsource: url,title: text)));
                           print("pressed");
                         },

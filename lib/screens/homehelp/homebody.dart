@@ -20,9 +20,6 @@ class homebody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(
-            height: 20,
-          ),
           Column(
             children: [
               Align(
@@ -35,12 +32,12 @@ class homebody extends StatelessWidget {
                     style: GoogleFonts.poppins(
                       fontSize: 25,
                       color: Colors.black87,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 10),
 
               CarouselSlider(
                 items: [
@@ -104,7 +101,7 @@ class homebody extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
